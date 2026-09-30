@@ -4,4 +4,4 @@ backup.env
 cache/
 state/
 staging/
-.cursor/plans/
+.cursor/
