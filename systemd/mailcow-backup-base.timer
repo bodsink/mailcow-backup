@@ -1,0 +1,10 @@
+[Unit]
+Description=Mailcow database base dump daily at 02:30 Asia/Jakarta
+
+[Timer]
+OnCalendar=*-*-* 02:30:00
+Persistent=true
+Unit=mailcow-backup-base.service
+
+[Install]
+WantedBy=timers.target

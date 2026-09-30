@@ -1,0 +1,7 @@
+[mysqld]
+server_id = 1
+log_bin = mysql-bin
+binlog_format = ROW
+binlog_row_image = FULL
+binlog_expire_logs_seconds = 259200
+max_binlog_size = 64M

@@ -1,0 +1,18 @@
+[Unit]
+Description=Watch Mailcow inbox and database changes
+After=docker.service
+Wants=docker.service
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/mailcow-backup
+EnvironmentFile=/opt/mailcow-backup/backup.env
+ExecStart=/opt/mailcow-backup/bin/watch.sh
+Restart=always
+RestartSec=30
+Nice=19
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+
+[Install]
+WantedBy=multi-user.target

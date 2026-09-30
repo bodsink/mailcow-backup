@@ -1,0 +1,7 @@
+backup.env
+*.env
+!env/backup.env.example
+cache/
+state/
+staging/
+.cursor/plans/

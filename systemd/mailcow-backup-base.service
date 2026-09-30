@@ -1,0 +1,15 @@
+[Unit]
+Description=Mailcow database base dump and snapshot cleanup
+After=docker.service
+Wants=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=/opt/mailcow-backup
+EnvironmentFile=/opt/mailcow-backup/backup.env
+ExecStart=/opt/mailcow-backup/bin/backup.sh db-base
+ExecStart=/opt/mailcow-backup/bin/backup.sh prune
+Nice=19
+IOSchedulingClass=best-effort
+IOSchedulingPriority=7
+TimeoutStartSec=6h
